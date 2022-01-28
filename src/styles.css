@@ -1,1 +1,41 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  color: #14233D;
+}
+
+.btn-wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+.btn {
+  color: #14233D;
+  background-color: #fff;
+  border: 2px solid #DDE3EB;
+  padding: 6px 16px;
+  font-size: 16px;
+}
+
+.btn:hover {
+  background-color: #F2F4F7;
+}
+
+.btn:focus {
+  outline: none;
+  border: #297FFF solid 2px;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #297FFF;
+  width: 100%;
+  padding: 12px;
+  font-size: 20px;
+  border: none;
+  margin: 16px 0;
+}
+
+.btn-primary:hover {
+  opacity: .8;
+}
