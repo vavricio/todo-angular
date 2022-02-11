@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { Item } from '../item';
 
 @Component({
   selector: 'app-list',
@@ -6,19 +7,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./list.component.css']
 })
 export class ListComponent {
-
 /*  title = 'todo';*/
 
   filter: 'all' | 'active' | 'done' = 'all';
 
-  allItems = [
+  allItems: Item[] = [
     { description: 'Eat', done: true },
     { description: 'Code', done: false },
     { description: 'Energy drink', done: false },
     { description: 'Die', done: false },
   ];
 
-  get items() {
+  getItems() {
     if (this.filter === 'all') {
       return this.allItems;
     }

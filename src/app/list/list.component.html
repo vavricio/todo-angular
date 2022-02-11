@@ -4,7 +4,7 @@
   <input
     #newItem
     placeholder="add an item"
-    (keyup.enter)="addItem(newItem.value); newItem.value = ''"
+    (keydown.enter)="addItem(newItem.value); newItem.value = ''"
     class="lg-text-input"
     id="addItemInput"
   />
@@ -35,13 +35,13 @@
   </div>
 
   <h2 class="items-number">
-    {{items.length}}
-    <span *ngIf="items.length === 1; else elseBlock">item</span>
+    {{getItems().length}}
+    <span *ngIf="getItems().length === 1; else elseBlock">item</span>
     <ng-template #elseBlock>items</ng-template>
   </h2>
 
   <ul class="list">
-    <li class="list-element" *ngFor="let item of items">
+    <li class="list-element" *ngFor="let item of getItems()">
       <app-item (remove)="remove(item)" [item]="item"></app-item>
     </li>
   </ul>
