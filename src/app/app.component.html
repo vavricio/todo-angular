@@ -1,48 +1,19 @@
 <div class="main">
-  <h1 class="main-title">To Do List</h1>
+  <div class="list-wrapper">
+    <input
+      #newList
+      placeholder="add new list"
+      (keyup.enter)="addList(newList.value); newList.value = ''"
+      class="list-text-input"
+      id="addListInput"
+      type="text">
 
-  <input
-    #newItem
-    placeholder="add an item"
-    (keyup.enter)="addItem(newItem.value); newItem.value = ''"
-    class="lg-text-input"
-    id="addItemInput"
-  />
+    <button class="btn-primary" (click)="addList(newList.value); newList.value = ''">Add</button>
 
-  <button class="btn-primary" (click)="addItem(newItem.value); newItem.value = ''">Add</button>
-
-  <div class="btn-wrapper">
-    <button
-      class="btn btn-menu"
-      [class.active]="filter == 'all'"
-      (click)="filter = 'all'">
-      All
-    </button>
-
-    <button
-      class="btn btn-menu"
-      [class.active]="filter == 'active'"
-      (click)="filter = 'active'">
-      To Do
-    </button>
-
-    <button
-      class="btn btn-menu"
-      [class.active]="filter == 'done'"
-      (click)="filter = 'done'">
-      Done
-    </button>
+    <ul class="main-list">
+      <li class="main-list__element" *ngFor="let list of lists"><a href="#" class="main-list__link">{{list.title}}</a></li>
+    </ul>
   </div>
 
-  <h2 class="items-number">
-    {{items.length}}
-    <span *ngIf="items.length === 1; else elseBlock">item</span>
-    <ng-template #elseBlock>items</ng-template>
-  </h2>
-
-  <ul class="list">
-    <li class="list-element" *ngFor="let item of items">
-      <app-item (remove)="remove(item)" [item]="item"></app-item>
-    </li>
-  </ul>
+  <app-list></app-list>
 </div>

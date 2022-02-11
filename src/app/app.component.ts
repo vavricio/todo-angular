@@ -7,32 +7,16 @@ import { Component } from '@angular/core';
 })
 
 export class AppComponent {
-  title = 'todo';
-
-  filter: 'all' | 'active' | 'done' = 'all';
-
-  allItems = [
-    { description: 'Eat', done: true },
-    { description: 'Code', done: false },
-    { description: 'Energy drink', done: false },
-    { description: 'Die', done: false },
+  lists = [
+    {title: 'Grocery list', tasks: {}}, //todo add items to list
+    {title: 'Book list', tasks: {}},
+    {title: 'Home tasks', tasks: {}},
   ];
 
-  get items() {
-    if (this.filter === 'all') {
-      return this.allItems;
-    }
-    return this.allItems.filter(item => this.filter === 'done' ? item.done : !item.done);
-  }
-
-  addItem(description: string) {
-    this.allItems.unshift({
-      description,
-      done: false
+  addList(title: string) {
+    this.lists.unshift({
+      title,
+      tasks: {}
     });
-  }
-
-  remove(item) {
-    this.allItems.splice(this.allItems.indexOf(item), 1);
   }
 }
