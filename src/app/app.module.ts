@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { ListComponent } from './list/list.component';
 import { PageHomeComponent } from './pages/page-home/page-home.component';
 import { PageListComponent } from './pages/page-list/page-list.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -16,10 +17,11 @@ import { PageListComponent } from './pages/page-list/page-list.component';
     PageHomeComponent,
     PageListComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        FormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

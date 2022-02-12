@@ -1,1 +1,15 @@
 <h2>{{ list.title }}</h2>
+<input
+  #task
+  (keyup.enter)="submit(task)"
+  placeholder="add new task"
+  type="text"
+  class="page-list__input">
+
+<button
+  (click)="submit(task)"
+  class="page-list__button">Add</button>
+
+<p class="page-list__task" *ngFor="let task of getTasks(); index as i">
+  <app-item (remove)="delete(i)" [item]="task"></app-item>
+</p>

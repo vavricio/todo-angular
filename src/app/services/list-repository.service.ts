@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ItemList } from '../item-list';
+import {Item} from "../item";
 
 const lists: ItemList[] = [
   {
@@ -62,4 +63,9 @@ export class ListRepositoryService {
 
     return list;
   }
+
+  delete(id: number): void {
+    lists.splice(id - 1, 1)
+  }
+
 }

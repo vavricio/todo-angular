@@ -1,3 +1,17 @@
+<input
+  #listTitle
+  (keyup.enter)="submit(listTitle)"
+  placeholder="add new list"
+  type="text"
+  class="page-home__input">
+
+  <button
+    (click)="submit(listTitle)"
+    class="page-home__button">Add list</button>
+
 <p *ngFor="let list of lists; index as i">
   <a [routerLink]="['list', i + 1]">{{ list.title }} ({{ list.tasks.length }})</a>
+  <button
+    (click)="deleteList(i+1)"
+    class="page-home__button">Delete</button>
 </p>
