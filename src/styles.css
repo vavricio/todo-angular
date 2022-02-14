@@ -3,13 +3,13 @@ body {
   color: #14233D;
 }
 
-.btn-wrapper {
+.item__button-wrapper {
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-between;
 }
 
-.btn {
+.button {
   color: #14233D;
   background-color: #fff;
   border: 2px solid #DDE3EB;
@@ -17,16 +17,20 @@ body {
   font-size: 16px;
 }
 
-.btn:hover {
+.button:hover {
+  opacity: .8;
+}
+
+.item__button:hover {
   background-color: #F2F4F7;
 }
 
-.btn:focus {
+.item__button:focus {
   outline: none;
   border: #297FFF solid 2px;
 }
 
-.btn-primary {
+/*.btn-primary {
   color: #fff;
   background-color: #297FFF;
   width: 100%;
@@ -38,4 +42,4 @@ body {
 
 .btn-primary:hover {
   opacity: .8;
-}
+}*/

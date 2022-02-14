@@ -1,0 +1,26 @@
+.page-list__input {
+  width: 100%;
+  padding: 16px;
+  border: 2px solid #DDE3EB;
+  display: block;
+  box-sizing: border-box;
+  font-size: 16px;
+  margin: 16px 0;
+}
+
+.page-list__button {
+  width: 100%;
+  border: none;
+  background: #297FFF;
+  color: #ffffff;
+  padding: 12px;
+}
+
+.page-list__button:hover {
+  opacity: .8;
+}
+
+.page-list__amount {
+  font-size: 18px;
+  color: #14233D;
+}

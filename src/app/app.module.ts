@@ -4,7 +4,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { ItemComponent } from './item/item.component';
 import { AppRoutingModule } from './app-routing.module';
-import { ListComponent } from './list/list.component';
 import { PageHomeComponent } from './pages/page-home/page-home.component';
 import { PageListComponent } from './pages/page-list/page-list.component';
 import {FormsModule} from "@angular/forms";
@@ -13,7 +12,6 @@ import {FormsModule} from "@angular/forms";
   declarations: [
     AppComponent,
     ItemComponent,
-    ListComponent,
     PageHomeComponent,
     PageListComponent
   ],
