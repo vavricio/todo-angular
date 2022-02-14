@@ -74,3 +74,7 @@
   text-decoration: none;
   color: #14233D;
 }
+
+.switcher__btn-link:hover {
+  background-color: #F2F4F7;
+}

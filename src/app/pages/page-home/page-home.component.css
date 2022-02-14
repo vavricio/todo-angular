@@ -26,6 +26,10 @@
   color: #000;
 }
 
+.page-home__btn-delete:hover {
+  background-color: #F2F4F7;
+}
+
 .page-home__wrapper {
   margin: 16px 10px;
   display: flex;
@@ -42,4 +46,8 @@
   font-size: 18px;
   text-decoration: none;
   color: #14233D;
+}
+
+.page-home__link:hover {
+  opacity: .8;
 }
