@@ -1,17 +1,41 @@
-<h2>{{ list.title }}</h2>
-<input
-  #task
-  (keyup.enter)="submit(task)"
-  placeholder="add new task"
-  type="text"
-  class="page-list__input">
+<div class="page-list">
+  <ul class="switcher">
+    <h2 class="switcher__title">Other lists</h2>
+    <li
+      *ngFor="let element of lists; index as i" class="switcher__element">
+      <a
+        class="switcher__link"
+        [routerLink]="['/list', i + 1]">
+        {{element.title}} ({{element.tasks.length}})
+      </a>
+    </li>
+    <li class="switcher__element">
+      <a
+        class="button switcher__btn-link"
+        [routerLink]="['/list']">
+        Go Back
+      </a>
+    </li>
+  </ul>
 
-<button
-  (click)="submit(task)"
-  class="button page-list__button">Add</button>
+  <div class="main">
+    <h2 class="page-list__title">{{ list.title }}</h2>
+    <input
+      #task
+      (keyup.enter)="submit(task)"
+      placeholder="add new task"
+      type="text"
+      class="page-list__input">
 
-<p class="page-list__amount">Amount of tasks: {{getTasks().length}}</p>
+    <button
+      (click)="submit(task)"
+      class="button page-list__button">Add
+    </button>
 
-<p class="page-list__task" *ngFor="let task of getTasks(); index as i">
-  <app-item (remove)="delete(i)" [item]="task"></app-item>
-</p>
+    <p class="page-list__amount">Amount of tasks: {{getTasks().length}}</p>
+
+    <p class="page-list__task" *ngFor="let task of getTasks(); index as i">
+      <app-item (remove)="delete(i)" [item]="task"></app-item>
+    </p>
+  </div>
+</div>
