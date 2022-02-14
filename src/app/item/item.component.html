@@ -1,24 +1,18 @@
 <div class="item">
+  <input type="checkbox" [(ngModel)]="item.done"/>
+  <label [style.text-decoration]="item.done ? 'line-through' : 'none'">{{ item.description }}</label>
 
-  <input [id]="item.description" type="checkbox" (change)="item.done = !item.done" [checked]="item.done" />
-  <label [for]="item.description" *ngIf="!item.done">{{item.description}}</label>
+  <input
+    #editedItem
+    [style.display]="onEdit ? 'block' : 'none'"
+    class="item__input"
+    placeholder="edit item"
+    [value]="item.description"
+    (keyup.enter)="saveItem(editedItem.value)">
 
-  <!-- text strikethrough -->
-  <label [for]="item.description" *ngIf="item.done" style="text-decoration: line-through;">{{item.description}}</label>
-
-  <div class="btn-wrapper" *ngIf="!editable">
-    <button class="btn" (click)="editable = !editable">Edit</button>
-    <button class="btn btn-warn" (click)="remove.emit()">Delete</button>
+  <div class="item__button-wrapper">
+    <button class="button item__button" (click)="onEdit = !onEdit">{{ onEdit ? 'Cancel' : 'Edit' }}</button>
+    <button class="button item__button item__btn-save" *ngIf="onEdit" (click)="saveItem(editedItem.value)">Save</button>
+    <button class="button item__button item__btn-warn" *ngIf="!onEdit" (click)="remove.emit()">Delete</button>
   </div>
-
-  <!-- Edit Mode -->
-  <div *ngIf="editable">
-    <input class="sm-text-input" placeholder="edit item" [value]="item.description" #editedItem (keyup.enter)="saveItem(editedItem.value)">
-
-    <div class="btn-wrapper">
-      <button class="btn" (click)="editable = !editable">Cancel</button>
-      <button class="btn btn-save" (click)="saveItem(editedItem.value)">Save</button>
-    </div>
-  </div>
-
 </div>
