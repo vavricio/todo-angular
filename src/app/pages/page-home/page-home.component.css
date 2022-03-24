@@ -1,0 +1,53 @@
+.page-home__input {
+  width: 100%;
+  padding: 16px;
+  border: 2px solid #DDE3EB;
+  display: block;
+  box-sizing: border-box;
+  font-size: 16px;
+  margin: 16px auto;
+}
+
+.page-home__input:focus {
+  outline: none;
+  border-color: #297FFF;
+}
+
+.page-home__btn-add {
+  border: none;
+  width: 100%;
+  background: #297FFF;
+  color: #ffffff;
+  padding: 12px;
+}
+
+.page-home__btn-delete {
+  background-color: #fff;
+  color: #000;
+}
+
+.page-home__btn-delete:hover {
+  background-color: #F2F4F7;
+}
+
+.page-home__wrapper {
+  margin: 16px 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.page-home__amount {
+  margin: 16px auto 32px;
+  font-size: 16px;
+  color: #14233D;
+}
+
+.page-home__link {
+  font-size: 18px;
+  text-decoration: none;
+  color: #14233D;
+}
+
+.page-home__link:hover {
+  opacity: .8;
+}

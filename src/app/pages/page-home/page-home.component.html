@@ -1,0 +1,29 @@
+<div class="main">
+
+  <h1>Todo-List</h1>
+
+  <input
+    #listTitle
+    (keyup.enter)="submit(listTitle)"
+    placeholder="add new list"
+    type="text"
+    class="page-home__input">
+
+  <button
+    (click)="submit(listTitle)"
+    class="button page-home__btn-add">Add list
+  </button>
+
+  <p class="page-home__amount">Amount of lists: {{lists.length}}</p>
+
+  <div *ngFor="let list of lists; index as i" class="page-home__wrapper">
+    <a
+      class="page-home__link"
+      [routerLink]="['list', i + 1]">
+      {{ list.title }} ({{ list.tasks.length }})</a>
+    <button
+      (click)="deleteList(i+1)"
+      class="button page-home__btn-delete">Delete
+    </button>
+  </div>
+</div>

@@ -3,13 +3,13 @@ body {
   color: #14233D;
 }
 
-.btn-wrapper {
+.item__button-wrapper {
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-between;
 }
 
-.btn {
+.button {
   color: #14233D;
   background-color: #fff;
   border: 2px solid #DDE3EB;
@@ -17,25 +17,24 @@ body {
   font-size: 16px;
 }
 
-.btn:hover {
+.button:hover {
+  opacity: .8;
+}
+
+.item__button:hover {
   background-color: #F2F4F7;
 }
 
-.btn:focus {
+.item__button:focus {
   outline: none;
   border: #297FFF solid 2px;
 }
 
-.btn-primary {
-  color: #fff;
-  background-color: #297FFF;
-  width: 100%;
-  padding: 12px;
-  font-size: 20px;
-  border: none;
-  margin: 16px 0;
-}
-
-.btn-primary:hover {
-  opacity: .8;
+.main {
+  margin: 32px auto;
+  max-width: 500px;
+  width: 85%;
+  padding: 16px;
+  text-align: center;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,.2), 0 40px 80px 0 rgba(0,0,0,.1);
 }
