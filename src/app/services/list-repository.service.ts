@@ -1,10 +1,9 @@
 import { Injectable } from '@angular/core';
 import { ItemList } from '../item-list';
-import {Item} from "../item";
 
 const lists: ItemList[] = [
   {
-    title: 'Example Todo List',
+    title: 'Example Todo-List',
     tasks: [
       {
         description: 'buy milk',
@@ -15,20 +14,20 @@ const lists: ItemList[] = [
         done: false
       },
       {
-        description: 'kill bill',
+        description: 'do homework',
         done: true
       }
     ]
   },
   {
-    title: 'Second Todo List',
+    title: 'Second Todo-List',
     tasks: [
       {
-        description: 'foo',
+        description: 'Example task 1',
         done: false
       },
       {
-        description: 'blablabalb',
+        description: 'Example task 2',
         done: true
       }
     ]
